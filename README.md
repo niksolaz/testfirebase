@@ -1,1 +1,1 @@
-# testfirebase
+Simple app test using Firebase 
