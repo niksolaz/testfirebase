@@ -26,7 +26,6 @@
 		448E55051FC71C1B003EEDE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		448E55081FC71C1B003EEDE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		448E550A1FC71C1B003EEDE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44C2DF8C1FC724240045A840 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../firebase-download/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEFA5CB9AFBFFBA61B505020 /* Pods_testfirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testfirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BBCBA9866770485B2F19EA /* Pods-testfirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testfirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-testfirebase/Pods-testfirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,7 +45,6 @@
 		448E54F21FC71C1B003EEDE8 = {
 			isa = PBXGroup;
 			children = (
-				44C2DF8C1FC724240045A840 /* GoogleService-Info.plist */,
 				448E54FD1FC71C1B003EEDE8 /* testfirebase */,
 				448E54FC1FC71C1B003EEDE8 /* Products */,
 				DF6CE0C57F963785E929BEF1 /* Pods */,
@@ -174,12 +172,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-testfirebase/Pods-testfirebase-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
