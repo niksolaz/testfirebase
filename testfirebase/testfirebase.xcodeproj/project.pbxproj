@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		337FEFF08DC7AC610523BDA6 /* Pods_testfirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFA5CB9AFBFFBA61B505020 /* Pods_testfirebase.framework */; };
 		4445DEBD1FC9A42F002C77E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4445DEBC1FC9A415002C77E0 /* GoogleService-Info.plist */; };
+		4471D73C1FCD510000C5200D /* FbTodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471D73B1FCD510000C5200D /* FbTodoListController.swift */; };
 		448E54FF1FC71C1B003EEDE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448E54FE1FC71C1B003EEDE8 /* AppDelegate.swift */; };
 		448E55011FC71C1B003EEDE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448E55001FC71C1B003EEDE8 /* ViewController.swift */; };
 		448E55041FC71C1B003EEDE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448E55021FC71C1B003EEDE8 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		2B83C3F5831923D932D7D15F /* Pods-testfirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testfirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testfirebase/Pods-testfirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		4445DEBC1FC9A415002C77E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../firebase-download/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4471D73B1FCD510000C5200D /* FbTodoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbTodoListController.swift; sourceTree = "<group>"; };
 		448E54FB1FC71C1B003EEDE8 /* testfirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testfirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		448E54FE1FC71C1B003EEDE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		448E55001FC71C1B003EEDE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				448E54FE1FC71C1B003EEDE8 /* AppDelegate.swift */,
 				448E55001FC71C1B003EEDE8 /* ViewController.swift */,
 				448E55021FC71C1B003EEDE8 /* Main.storyboard */,
+				4471D73B1FCD510000C5200D /* FbTodoListController.swift */,
 				448E55051FC71C1B003EEDE8 /* Assets.xcassets */,
 				448E55071FC71C1B003EEDE8 /* LaunchScreen.storyboard */,
 				448E550A1FC71C1B003EEDE8 /* Info.plist */,
@@ -229,6 +232,7 @@
 			files = (
 				448E55011FC71C1B003EEDE8 /* ViewController.swift in Sources */,
 				448E54FF1FC71C1B003EEDE8 /* AppDelegate.swift in Sources */,
+				4471D73C1FCD510000C5200D /* FbTodoListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
