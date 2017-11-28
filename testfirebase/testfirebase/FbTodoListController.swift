@@ -13,7 +13,14 @@ class FbTodoListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+       let Todo1 = TodoItem(name: "sapone", completed: false, quantity: "4")
+        let Todo2 = TodoItem(name: "libro", completed: true, quantity: "4")
+        let Todo3 = TodoItem(name: "spazzolino", completed: true, quantity: "4")
+        let Todo4 = TodoItem(name: "dentifricio", completed: false, quantity: "4")
+        todoListItems.append(Todo1)
+        todoListItems.append(Todo2)
+        todoListItems.append(Todo3)
+        todoListItems.append(Todo4)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,15 +37,17 @@ class FbTodoListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return todoListItems.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListCell", for: indexPath)
-
-        cell.textLabel?.text = "test"
-
+        
+        let todo = todoListItems[indexPath.row]
+        cell.textLabel?.text = todo.name
+        cell.detailTextLabel?.text = todo.quantity
+        cell.accessoryType = todo.completed ? .checkmark : .none
         return cell
     }
     
