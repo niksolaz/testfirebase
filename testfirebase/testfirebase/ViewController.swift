@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //loginAnonym()
-        
+       
         var item = todolistRef.child("zucchero")
         var values:[String: Any] = ["completed":true, "name":"zucchero", "quantity":"2kg"]
         item.setValue(values)
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         item = todolistRef.child("sapone")
         values = ["completed":true, "name":"sapone", "quantity":1]
         item.setValue(values)
-        
+ 
     }
     func loginAnonym() {
         Auth.auth().signInAnonymously { (User, Error) in

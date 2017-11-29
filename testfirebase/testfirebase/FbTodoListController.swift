@@ -7,21 +7,36 @@
 //
 
 import UIKit
+import Firebase
+import WebKit
+
 
 class FbTodoListController: UITableViewController {
     var todoListItems:[TodoItem] = []
+    
+    let todolistRef: DatabaseReference = Database.database().reference().child("todolist")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       let Todo1 = TodoItem(name: "sapone", completed: false, quantity: "4")
-        let Todo2 = TodoItem(name: "libro", completed: true, quantity: "4")
-        let Todo3 = TodoItem(name: "spazzolino", completed: true, quantity: "4")
-        let Todo4 = TodoItem(name: "dentifricio", completed: false, quantity: "4")
-        todoListItems.append(Todo1)
-        todoListItems.append(Todo2)
-        todoListItems.append(Todo3)
-        todoListItems.append(Todo4)
+        
+        todolistRef.observe(.value) { (snapshot) in
+            for item in snapshot.children {
+                let todoData = item as! DataSnapshot
+                let todoItem = todoData.value as! [String:Any]
+                
+                let name:String = String(describing: todoItem["name"]!)
+                print(name)
+                let completed:Bool = todoItem["completed"] as! Bool
+                let quantity:String = String(describing: todoItem["quantity"]!)
+                
+                let todo = TodoItem(name: name, completed: completed, quantity: quantity)
+                self.todoListItems.append(todo)
+            }
+            self.tableView.reloadData()
+        }
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
