@@ -14,30 +14,36 @@ import WebKit
 class FbTodoListController: UITableViewController {
     var todoListItems:[TodoItem] = []
     
-    let todolistRef: DatabaseReference = Database.database().reference().child("todolist")
+    let todoListRef: DatabaseReference = Database.database().reference().child("todolist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        todolistRef.observe(.value) { (snapshot) in
+        print("localize error 1")
+        
+        todoListRef.observe(.value) { (snapshot) in
             for item in snapshot.children {
                 let todoData = item as! DataSnapshot
-                let todoItem = todoData.value as! [String:Any]
-                
+                let todoItem = todoData.value as! [String:Any?]
+                print("localize error 2")
                 let name:String = String(describing: todoItem["name"]!)
-                print(name)
-                let completed:Bool = todoItem["completed"] as! Bool
+                print("localize error 3")
+                let completed:Bool = (todoItem["completed"]! as! Bool) 
+                print("localize error 4")
                 let quantity:String = String(describing: todoItem["quantity"]!)
+                print("localize error 5")
                 
                 let todo = TodoItem(name: name, completed: completed, quantity: quantity)
                 self.todoListItems.append(todo)
+                print("localize error 6")
             }
             self.tableView.reloadData()
+            print("localize error 7")
         }
         
+        
     }
-    
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
