@@ -25,13 +25,13 @@ class FbTodoListController: UITableViewController {
             for item in snapshot.children {
                 
                 let todoData = item as! DataSnapshot
-                let todoItem = todoData.value as! [String:Any?]
+                let todoItem = todoData.value as! [String:Any]
                 print("localize error FbTodoListController 1")
                 
                 let name:String = String(describing: todoItem["name"]!)
                 print("localize error FbTodoListController 2")
                 // 
-                let completed:Bool = (todoItem["completed"] as! NSString).boolValue
+                let completed:Bool = todoItem["completed"] as! Bool
                 print("localize error FbTodoListController 3")
                 
                 let quantity:String = String(describing: todoItem["quantity"]!)
