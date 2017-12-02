@@ -30,7 +30,7 @@ class FbTodoListController: UITableViewController {
                 
                 let name:String = String(describing: todoItem["name"]!)
                 print("localize error FbTodoListController 2")
-                
+                // 
                 let completed:Bool = (todoItem["completed"] as! NSString).boolValue
                 print("localize error FbTodoListController 3")
                 
