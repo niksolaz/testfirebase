@@ -19,26 +19,30 @@ class FbTodoListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("localize error 1")
+        
         
         todoListRef.observe(.value) { (snapshot) in
             for item in snapshot.children {
+                
                 let todoData = item as! DataSnapshot
                 let todoItem = todoData.value as! [String:Any?]
-                print("localize error 2")
+                print("localize error FbTodoListController 1")
+                
                 let name:String = String(describing: todoItem["name"]!)
-                print("localize error 3")
-                let completed:Bool = (todoItem["completed"]! as! Bool) 
-                print("localize error 4")
+                print("localize error FbTodoListController 2")
+                
+                let completed:Bool = (todoItem["completed"] as! NSString).boolValue
+                print("localize error FbTodoListController 3")
+                
                 let quantity:String = String(describing: todoItem["quantity"]!)
-                print("localize error 5")
+                print("localize error FbTodoListController 4")
                 
                 let todo = TodoItem(name: name, completed: completed, quantity: quantity)
                 self.todoListItems.append(todo)
-                print("localize error 6")
+                print("localize error FbTodoListController 5")
             }
             self.tableView.reloadData()
-            print("localize error 7")
+            
         }
         
         

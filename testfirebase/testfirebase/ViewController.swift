@@ -17,15 +17,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //loginAnonym()
-        print("localize error 1")
+    
         var item = todolistRef.child("zucchero")
         var values:[String: Any] = ["completed":true, "name":"zucchero", "quantity":"2kg"]
         item.setValue(values)
-        print("localize error 2")
+        print("localize error ViewController 1")
         item = todolistRef.child("sapone")
         values = ["completed":true, "name":"sapone", "quantity":1]
         item.setValue(values)
-        print("localize error 3")
+        print("localize error ViewController 2")
         print(todolistRef)
         
     }
