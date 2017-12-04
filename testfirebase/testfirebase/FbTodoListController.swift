@@ -77,25 +77,35 @@ class FbTodoListController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let p = todoListItems[indexPath.row]
+            p.completed = !p.completed
+        let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = p.completed ? .checkmark : .none
+        todoListRef.child(p.name).updateChildValues(["completed" : p.completed])
+    }
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let p = todoListItems[indexPath.row]
+            todoListRef.child(p.name).removeValue()
+            todoListItems.remove(at: indexPath.row)
+            //tableView.reloadData()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
